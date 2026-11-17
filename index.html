@@ -1,0 +1,342 @@
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAWfect Treats | Repostería para mascotas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ENCABEZADO -->
+    <header class="header">
+     <a href="index.html" class="logo">
+    <span class="script-dark">PAW</span>fect Treats
+</a>
+
+        <nav class="navbar">
+            <a href="#inicio">Inicio</a>
+            <a href="#productos">Productos</a>
+            <a href="#nosotros">Nosotros</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+
+       <div class="header-actions">
+    <a href="#productos" class="header-button">Ver productos</a>
+
+   <button type="button" class="cart-link" id="cart-toggle"
+        aria-expanded="false" aria-controls="cart-dropdown">
+    🛒 Carrito <span id="cart-count">0</span>
+</button>
+
+<!-- VENTANA DESPLEGABLE DEL CARRITO -->
+<div class="cart-dropdown" id="cart-dropdown" hidden>
+
+    <div id="cart-list">
+        <p class="empty-message">
+            Tu carrito está esperando algo delicioso.
+        </p>
+    </div>
+
+<div class="cart-summary">
+    <p>Subtotal: <strong id="cart-subtotal">$0</strong></p>
+    <h3>Total: <span id="cart-total">$0</span></h3>
+
+  <a href="https://www.instagram.com/pawf_ects/"
+   id="checkout-button"
+   class="main-button"
+   target="_blank"
+   rel="noopener noreferrer">
+    Pedir por Instagram
+</a>
+</div>
+
+</div>
+</div>
+    </header>
+
+    <main>
+
+        <!-- INICIO -->
+        <section class="hero" id="inicio">
+            <div class="hero-content">
+                <p class="subtitle">REPOSTERÍA HECHA CON AMOR</p>
+
+                <h1>
+                    Pequeños momentos,
+                    <span>grandes premios.</span>
+                </h1>
+
+                <p>
+                    Deliciosos postres elaborados especialmente
+                    para consentir a tus mascotas.
+                </p>
+
+                <a href="#productos" class="main-button">
+                    Descubrir productos
+                </a>
+            </div>
+
+            <div class="hero-image">
+                <img src="images/cute.png"
+                     alt="Perro y gato disfrutando de un pastel">
+            </div>
+        </section>
+
+        <!-- PRODUCTOS -->
+        <section class="products section" id="productos">
+
+            <div class="section-heading">
+                <p class="subtitle">NUESTRO CATÁLOGO</p>
+
+               <h2>
+    <span class="script-dark">Un</span>
+    premio para cada
+    <span>ocasión.</span>
+</h2>
+
+                <p>
+                    Encuentra algo especial para tu compañero favorito.
+                </p>
+            </div>
+
+            <div class="category-grid">
+
+                <!-- PASTELES -->
+                <article class="category-card">
+                    <div class="category-image">
+                        <img src="images/cake.png"
+                             alt="Pastel para mascotas">
+                    </div>
+
+                    <h3>Pasteles</h3>
+
+                    <p>
+                        Celebraciones especiales para consentirlos.
+                    </p>
+
+                    <button onclick="filterProducts('Pasteles')">
+                        Ver productos
+                    </button>
+                </article>
+
+                <!-- CUPCAKES -->
+                <article class="category-card">
+                    <div class="category-image">
+                        <img src="images/cupcake.png"
+                             alt="Cupcakes para mascotas">
+                    </div>
+
+                    <h3>Cupcakes</h3>
+
+                    <p>
+                        Pequeños bocados llenos de sabor.
+                    </p>
+
+                    <button onclick="filterProducts('Cupcakes')">
+                        Ver productos
+                    </button>
+                </article>
+
+                <!-- GALLETAS -->
+                <article class="category-card">
+                    <div class="category-image">
+                        <img src="images/cookie.png"
+                             alt="Galletas para mascotas">
+                    </div>
+
+                    <h3>Galletas</h3>
+
+                    <p>
+                        Premios deliciosos para cualquier momento.
+                    </p>
+
+                    <button onclick="filterProducts('Galletas')">
+                        Ver productos
+                    </button>
+                </article>
+
+                <!-- ESPECIALES -->
+                <article class="category-card">
+                    <div class="category-image">
+                        <img src="images/gift.png"
+                             alt="Detalles especiales para mascotas">
+                    </div>
+
+                    <h3>Especiales</h3>
+
+                    <p>
+                        Detalles personalizados para tu mascota.
+                    </p>
+
+                    <button onclick="filterProducts('Especiales')">
+                        Ver productos
+                    </button>
+                </article>
+
+            </div>
+
+            <!-- LISTADO DE PRODUCTOS -->
+            <div class="catalog-heading">
+                <h2 class="catalog-title">
+    Nuestros <span>productos</span>
+</h2>
+
+                <button class="text-button"
+                        onclick="filterProducts('Todos')">
+                    Ver todos
+                </button>
+            </div>
+
+            <div class="product-grid" id="product-list">
+                <!-- Los productos aparecerán aquí mediante JavaScript -->
+            </div>
+
+
+
+</section>
+
+        <!-- NOSOTROS -->
+        <section class="about section" id="nosotros">
+
+            <div class="about-content">
+                <p class="subtitle">CONÓCENOS</p>
+
+                <h2>
+                    Mucho más que un
+                    <span>postre.</span>
+                </h2>
+
+                <p>
+                    En PAWfect Treats creemos que las mascotas merecen
+                    disfrutar de momentos especiales. Por eso creamos
+                    postres pensados para ellas, con ingredientes
+                    adecuados y mucho cuidado en cada preparación.
+                </p>
+            </div>
+
+            <div class="about-image">
+                <img src="images/cat.png"
+                     alt="Gatito de PAWfect Treats">
+            </div>
+
+        </section>
+
+       
+<!-- CONTACTO -->
+<section class="contact section" id="contacto">
+
+    <p class="subtitle">¿LISTOS PARA CONSENTIRLOS?</p>
+
+    <h2>
+        Su próximo premio
+        <span>favorito</span>
+        está aquí.
+    </h2>
+
+    <p>Contáctanos y descubre nuestras opciones.</p>
+
+    <a href="https://www.instagram.com/pawf_ects/"
+       class="main-button"
+       target="_blank"
+       rel="noopener noreferrer">
+        Contáctanos por Instagram
+    </a>
+
+</section>
+
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="footer">
+
+        <a href="#inicio" class="logo">
+    <span class="script-dark">PAW</span>fect Treats
+</a>
+
+        <p>
+            Postres especiales para compañeros extraordinarios.
+        </p>
+
+        <p>
+            © 2026 PAWfect Treats. Todos los derechos reservados.
+        </p>
+
+    </footer>
+
+
+
+<!-- BURBUJA DEL ASISTENTE -->
+<button type="button" class="assistant-toggle" id="assistant-toggle"
+        aria-label="Abrir asistente">
+    🐾
+</button>
+
+<!-- VENTANA DEL ASISTENTE -->
+<div class="assistant-chat" id="assistant-chat" hidden>
+
+    <div class="assistant-header">
+        <div>
+            <h3>PAWfect Assistant</h3>
+            <p>Encuentra el premio ideal para tu mascota</p>
+        </div>
+
+        <button type="button" id="assistant-close"
+                aria-label="Cerrar asistente">×</button>
+    </div>
+
+    <div class="assistant-content">
+
+        <p>¡Hola! Te ayudaré a encontrar el postre ideal para tu mascota.</p>
+
+        <label for="pet-type">¿Qué mascota tienes?</label>
+        <select id="pet-type">
+            <option value="">Selecciona una opción</option>
+            <option value="Perro">Perro</option>
+            <option value="Gato">Gato</option>
+        </select>
+
+        <label for="pet-occasion">¿Para qué ocasión buscas un postre?</label>
+        <select id="pet-occasion">
+            <option value="">Selecciona una ocasión</option>
+            <option value="Cumpleaños">Cumpleaños</option>
+            <option value="Celebración especial">Celebración especial</option>
+            <option value="Premio">Un premio especial</option>
+            <option value="Antojo">Solo porque sí</option>
+        </select>
+
+        <label for="pet-preference">¿Qué tipo de postre prefieres?</label>
+        <select id="pet-preference">
+            <option value="">Selecciona una opción</option>
+            <option value="Pasteles">Pasteles</option>
+            <option value="Cupcakes">Cupcakes</option>
+            <option value="Galletas">Galletas</option>
+            <option value="Especiales">Especiales</option>
+            <option value="Todos">Sorpréndeme</option>
+        </select>
+
+        <label for="pet-allergies">¿Tu mascota tiene alguna alergia o restricción alimentaria?</label>
+        <input type="text" id="pet-allergies"
+               placeholder="Escribe sus alergias o ninguna">
+
+        <button type="button" id="recommend-button">
+            Buscar recomendación
+        </button>
+
+        <div id="recommendation-result" aria-live="polite"></div>
+
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>   
+
+<script src="supabase.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+</html>
+

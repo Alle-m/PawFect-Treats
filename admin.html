@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administración | PAWfect Treats</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="admin-page">
+
+    <header class="header">
+        <a href="index.html" class="logo">PAWfect Treats </a>
+        <a href="index.html" class="header-button">Volver a la tienda</a>
+    </header>
+
+
+<section id="admin-login" class="admin-container login-container">
+
+    <div class="login-card">
+
+        <div class="login-decoration">🐾</div>
+
+        <div class="section-heading">
+            <p class="subtitle">PAWFECT TREATS</p>
+            <h1>Bienvenida de nuevo</h1>
+            <p>Administra cada detalle de tu tienda.</p>
+        </div>
+
+        <form id="login-form">
+
+            <label for="login-email">Correo electrónico</label>
+            <input
+                type="email"
+                id="login-email"
+                placeholder="Ingresa tu correo"
+                required
+            >
+
+            <label for="login-password">Contraseña</label>
+            <input
+                type="password"
+                id="login-password"
+                placeholder="Ingresa tu contraseña"
+                required
+            >
+
+            <button type="submit" class="main-button">
+                Iniciar sesión
+            </button>
+
+            <p id="login-message"></p>
+
+        </form>
+
+        <p class="login-footer">Acceso exclusivo para administradores</p>
+
+    </div>
+
+</section>
+
+
+    <main class="admin-container" id="admin-panel" hidden>
+
+        <div class="section-heading">
+            <p class="subtitle">PANEL DE CONTROL</p>
+            <h1>Administrar productos</h1>
+            <p>Agrega y organiza los productos de tu tienda.</p>
+        </div>
+
+        <section class="admin-stats">
+            <div class="stat-card">
+                <h3 id="product-count">0</h3>
+                <p>Productos registrados</p>
+            </div>
+        </section>
+
+        <section class="admin-form-section">
+            <h2>Agregar un producto</h2>
+
+            <form id="product-form">
+
+                <input type="hidden" id="product-id">
+
+                <label for="product-name">Nombre del producto</label>
+                <input type="text" id="product-name"
+                    placeholder="Ej. Pastel de cumpleaños" required>
+
+                <label for="product-price">Precio</label>
+                <input type="number" id="product-price"
+                    placeholder="Ej. 35000" min="1" required>
+
+                <label for="product-category">Categoría</label>
+                <select id="product-category" required>
+                    <option value="">Selecciona una categoría</option>
+                    <option value="Pasteles">Pasteles</option>
+                    <option value="Cupcakes">Cupcakes</option>
+                    <option value="Galletas">Galletas</option>
+                    <option value="Especiales">Especiales</option>
+                </select>
+
+                <label for="product-description">Descripción</label>
+                <textarea id="product-description"
+                    placeholder="Describe el producto..." required></textarea>
+
+                <label for="product-image">Nombre del archivo de imagen</label>
+                <input type="text" id="product-image"
+                    placeholder="Ej. pastel-perro.jpg">
+
+                <button type="submit" class="main-button" id="save-button">
+                    Agregar producto
+                </button>
+
+            </form>
+        </section>
+
+        <section class="admin-products">
+            <h2>Productos registrados</h2>
+            <div id="admin-product-list"></div>
+        </section>
+
+    </main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="supabase.js"></script>
+
+    <script src="admin.js"></script>
+
+</body>
+</html>
